@@ -1,0 +1,20 @@
+[commit]
+  gpgsign = true
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+# Automatically fix typos after 3s
+[help]
+  autocorrect = 30
+
+[init]
+  defaultBranch = main
+
+[user]
+  name = Mike Diaz
+  email = michaelwdiaz@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJb1oHkeRkkax3Z8zp5zenHzzMOBPa0+rtcCYABKT/Ky
