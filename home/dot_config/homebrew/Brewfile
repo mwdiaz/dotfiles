@@ -1,0 +1,19 @@
+# -- Bootstrap (installed by chezmoi scripts, declared for idempotency) -------
+
+cask "1password-cli"
+brew "gh"
+
+# -- Formulae -----------------------------------------------------------------
+
+brew "git"
+brew "yt-dlp" # Feature-rich command-line audio/video downloader
+
+# -- Casks --------------------------------------------------------------------
+
+cask "discord"
+cask "font-fira-code" # Free monospaced font with programming ligatures
+cask "iterm2"
+cask "setapp" # Collection of apps available with single subscription
+cask "slack"
+cask "spotify"
+cask "visual-studio-code"
