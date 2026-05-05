@@ -1,0 +1,17 @@
+{
+  ".local/share/oh-my-zsh": {
+      "exact": true,
+      "refreshPeriod": "168h",
+      "stripComponents": 1,
+      "type": "archive",
+      "url": "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+  },
+
+  ".config/oh-my-zsh/plugins/zsh-autosuggestions": {
+      "exact": true,
+      "refreshPeriod": "168h",
+      "stripComponents": 1,
+      "type": "archive",
+      "url": "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
+  }
+}
