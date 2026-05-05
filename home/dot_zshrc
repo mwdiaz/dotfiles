@@ -1,0 +1,2 @@
+# Wrap `gh` to inject read-only Personal Access Token
+source "$XDG_CONFIG_HOME/op/plugins.sh"

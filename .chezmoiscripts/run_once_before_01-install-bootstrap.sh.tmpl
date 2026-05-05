@@ -10,3 +10,13 @@ if ! command -v brew &>/dev/null; then
 else
   echo "Homebrew is already installed at $(where brew). Skipping installation..."
 fi
+
+# Bootstrap CLI tools needed by subsequent scripts. In particular, Homebrew
+# uses the GitHub CLI (`gh`) to verify attestations, and the Personal Access
+# Token needs to be read from 1password.
+for formula in "1password-cli" "gh"; do
+  if ! brew list "$formula" &>/dev/null; then
+    echo "Installing $formula..."
+    brew install "$formula"
+  fi
+done
