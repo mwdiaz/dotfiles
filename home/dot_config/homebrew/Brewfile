@@ -5,15 +5,36 @@ brew "gh"
 
 # -- Formulae -----------------------------------------------------------------
 
+brew "ffmpeg"
+brew "fnm"
 brew "git"
+brew "jq"
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
 
 # -- Casks --------------------------------------------------------------------
 
+cask "adobe-creative-cloud"
+cask "arq" # Multi-cloud backup application
+cask "claude" # Anthropic's official Claude AI desktop app
 cask "discord"
+cask "firefox"
 cask "font-fira-code" # Free monospaced font with programming ligatures
+cask "google-chrome"
 cask "iterm2"
+cask "obsidian"
 cask "setapp" # Collection of apps available with single subscription
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
+cask "zoom"
+
+# -- VS Code Extensions -------------------------------------------------------
+
+vscode "dbaeumer.vscode-eslint"
+vscode "editorconfig.editorconfig"
+vscode "graphql.vscode-graphql-syntax"
+vscode "graphql.vscode-graphql"
+vscode "mikestead.dotenv"
+vscode "redhat.vscode-yaml"
+vscode "stylelint.vscode-stylelint"
+vscode "timonwong.shellcheck"
