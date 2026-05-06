@@ -1,0 +1,20 @@
+syntax on
+set ruler
+
+function FormatGitCommit()
+  setlocal spell
+  setlocal expandtab shiftwidth=4 tabstop=4
+  setlocal textwidth=72
+  setlocal colorcolumn=+1
+
+  fun! <SID>StripTrailingWhitespace()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+  endfun
+
+  autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+endfun
+
+autocmd FileType gitcommit call FormatGitCommit()
