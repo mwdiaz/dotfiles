@@ -29,13 +29,14 @@ function {
         # Install using `.pkg` installer, which feels a bit more safe than
         # running the convenience script.
         {{- $HOMEBREW_REPO := "Homebrew/brew" -}}
+        {{- $HOMEBREW_PKG := "Homebrew.pkg" -}}
         {{- $homebrewLatestTagName := (gitHubLatestTag $HOMEBREW_REPO).Name -}}
         echo "Detected macOS, installing Homebrew version {{ $homebrewLatestTagName }} from {{ $HOMEBREW_REPO }}..."
 
         # While `((gitHubLatestRelease $HOMEBREW_REPO).Assets | first).BrowserDownloadURL`
         # would be less complex, it may fail in the case additional assets are
         # added to Homebrew releases in the future.
-        homebrew_pkg_download_url="{{ gitHubLatestReleaseAssetURL $HOMEBREW_REPO Homebrew.pkg }}"
+        homebrew_pkg_download_url="{{ gitHubLatestReleaseAssetURL $HOMEBREW_REPO $HOMEBREW_PKG }}"
 
         curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" \
           "${homebrew_pkg_download_url}"
