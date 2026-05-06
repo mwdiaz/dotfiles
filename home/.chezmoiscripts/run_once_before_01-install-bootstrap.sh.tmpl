@@ -54,7 +54,7 @@ function {
         fi
 
         echo "Installing Homebrew at root volume mount point /..."
-        sudo installer -package "${HOMEBREW_PKG_DIR}" -target "/"
+        sudo installer -package "${HOMEBREW_PKG_PATH}" -target "/"
 
         if command pkgutil --pkg-info "sh.brew.homebrew" &> /dev/null; then
           echo "Homebrew installed successfully to $(builtin where brew)."
