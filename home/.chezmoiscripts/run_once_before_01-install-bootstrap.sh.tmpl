@@ -26,19 +26,16 @@ function {
 
     case "${OS}" in
       "Darwin")
-        # Install with `.pkg` installer, introduced in Homebrew 4.1.2. Since
-        # Apple requires by default that all software installed via `installer`
-        # is signed by a developer certificate issued by Apple, I consider this
-        # method more secure than running the convenience script.
+        # Install using `.pkg` installer, which feels a bit more safe than
+        # running the convenience script.
         {{- $HOMEBREW_REPO := "Homebrew/brew" -}}
         {{- $homebrewLatestTagName := (gitHubLatestTag $HOMEBREW_REPO).Name -}}
-        {{- $homebrewLatestPkgFile := $homebrewLatestTagName | toString | printf "Homebrew-%s.pkg" }}
-        echo "Detected macOS, installing Homebrew with {{ $homebrewLatestPkgFile }} from {{ $HOMEBREW_REPO }}..."
+        echo "Detected macOS, installing Homebrew version {{ $homebrewLatestTagName }} from {{ $HOMEBREW_REPO }}..."
 
         # While `((gitHubLatestRelease $HOMEBREW_REPO).Assets | first).BrowserDownloadURL`
         # would be less complex, it may fail in the case additional assets are
         # added to Homebrew releases in the future.
-        homebrew_pkg_download_url="{{ gitHubLatestReleaseAssetURL $HOMEBREW_REPO $homebrewLatestPkgFile }}"
+        homebrew_pkg_download_url="{{ gitHubLatestReleaseAssetURL $HOMEBREW_REPO Homebrew.pkg }}"
 
         curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" \
           "${homebrew_pkg_download_url}"
