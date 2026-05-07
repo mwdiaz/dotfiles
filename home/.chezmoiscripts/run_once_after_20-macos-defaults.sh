@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-echo "Applying macOS system defaults..."
+echo "🍎 Applying macOS system defaults..."
 
 sudo --validate # Authenticate the user and extends the sudo timeout for another 5 minutes
 
@@ -80,4 +80,4 @@ for app in "Finder" "Dock" "SystemUIServer"; do
   killall "${app}" &>/dev/null || true
 done
 
-echo "macOS defaults applied. Some changes may require a logout/restart."
+echo "✅ macOS defaults applied. Some changes may require a logout/restart."

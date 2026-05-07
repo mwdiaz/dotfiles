@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+cd "{{ .chezmoi.sourceDir }}"
+
+# Switch the remote to SSH from HTTPS
+if git remote get-url origin | grep -q "https://github.com"; then
+    echo "🕹️ Switching chezmoi remote from HTTPS to SSH..."
+
+    # Extract the owner/repo and set it to SSH
+    REPO_NAME=$(gh repo view --json nameWithOwner -q .nameWithOwner)
+    git remote set-url origin "git@github.com:${REPO_NAME}.git"
+
+    echo "✅ chezmoi remote set to: $(git remote get-url origin)"
+else
+    echo "✅ chezmoi remote is already SSH or not a GitHub HTTPS URL. Skipping."
+fi
