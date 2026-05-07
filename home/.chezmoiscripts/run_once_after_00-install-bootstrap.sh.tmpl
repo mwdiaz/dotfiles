@@ -56,14 +56,9 @@ function {
         echo "Installing Homebrew at root volume mount point /..."
         sudo installer -package "${HOMEBREW_PKG_PATH}" -target "/"
 
-        {{- $brew_path := "/usr/local/bin/brew" -}}
-        {{- if eq .chezmoi.os "darwin" -}}
-          {{- $brew_path = "/opt/homebrew/bin/brew" -}}
-        {{- end }}
-
         if command pkgutil --pkg-info "sh.brew.homebrew" &> /dev/null; then
           # Source Homebrew environment to ensure brew commands work in this script
-          eval "$({{ $brew_path }} shellenv)"
+          eval "$($BREW_EXE shellenv)"
 
           echo "Homebrew installed successfully to $(builtin where brew)."
           rm -f -v "${HOMEBREW_PKG_PATH}"

@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+eval "$($BREW_EXE shellenv)"
+
 # Brewfile hash: {{ include "./dot_config/homebrew/Brewfile" | sha256sum }}
 if ! command brew bundle check --global &> /dev/null; then
   echo "The Brewfile's dependencies are not satisfied. Running brew bundle install --global..."
