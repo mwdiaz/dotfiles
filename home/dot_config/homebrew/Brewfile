@@ -6,6 +6,7 @@ brew "gh"
 
 # -- Formulae -----------------------------------------------------------------
 
+brew "chezmoi"
 brew "ffmpeg"
 brew "fnm"
 brew "git"
