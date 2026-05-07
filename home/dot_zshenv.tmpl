@@ -1,0 +1,17 @@
+# .zshenv: Zsh environment file, loaded always.
+
+{{- /* Calculate paths once at the top */ -}}
+{{- $configHome := joinPath .chezmoi.homeDir .xdg.config -}}
+{{- $cacheHome := joinPath .chezmoi.homeDir .xdg.cache -}}
+{{- $dataHome := joinPath .chezmoi.homeDir .xdg.data -}}
+{{- $stateHome := joinPath .chezmoi.homeDir .xdg.state -}}
+
+# Set ZDOTDIR to point to your Zsh config folder
+export ZDOTDIR=${ZDOTDIR:-{{ joinPath $configHome "zsh" | quote }}}
+
+# XDG Base Directory Specification
+# See https://specifications.freedesktop.org/basedir-spec/latest/#variables
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-{{ $configHome | quote }}}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:-{{ $cacheHome | quote }}}
+export XDG_DATA_HOME=${XDG_DATA_HOME:-{{ $dataHome | quote }}}
+export XDG_STATE_HOME=${XDG_STATE_HOME:-{{ $stateHome | quote }}}

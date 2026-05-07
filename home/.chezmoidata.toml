@@ -1,0 +1,5 @@
+[xdg]
+  cache = ".cache"
+  config = ".config"
+  data = ".local/share"
+  state = ".local/state"
