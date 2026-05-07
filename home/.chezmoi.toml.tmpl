@@ -1,5 +1,6 @@
-{{- /* Define default Homebrew path based on OS and Architecture */ -}}
 {{- $brew_exe := "/usr/local/bin/brew" -}}
+
+{{- /* Define default Homebrew path based on OS and Architecture */ -}}
 {{- if eq .chezmoi.os "darwin" -}}
   {{- if eq .chezmoi.arch "arm64" -}}
     {{- $brew_exe = "/opt/homebrew/bin/brew" -}}
@@ -9,8 +10,8 @@
 {{- end -}}
 
 [data]
-    brew_exe = {{ $brew_exe | quote }}
+  brew_exe = {{ $brew_exe | quote }}
 
 [scriptEnv]
-    # Automatically injects $BREW_EXE into all chezmoi scripts
-    BREW_EXE = {{ $brew_exe | quote }}
+  # Automatically injects $BREW_EXE into all chezmoi scripts
+  BREW_EXE = {{ $brew_exe | quote }}
