@@ -1,5 +1,5 @@
 {
-  /* @see https://code.visualstudio.com/docs/getstarted/settings */
+  /* @see https://code.visualstudio.com/docs/configure/settings */
 
   "[git-commit]": {
     "editor.rulers": [50, 72],
