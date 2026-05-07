@@ -1,13 +1,21 @@
 #!/usr/bin/env zsh
 
-cd "{{ .chezmoi.sourceDir }}"
+cd "{{ .chezmoi.sourceDir }}" || { echo "❌ Could not open chezmoi source directory"; exit 1; }
 
 # Switch the remote to SSH from HTTPS
 if git remote get-url origin | grep -q "https://github.com"; then
     echo "🕹️ Switching chezmoi remote from HTTPS to SSH..."
 
+    export GH_TOKEN="$(op read op://Private/GitHub\ Homebrew\ PAT/token)"
+
     # Extract the owner/repo and set it to SSH
     REPO_NAME=$(gh repo view --json nameWithOwner -q .nameWithOwner)
+
+    if [ -z "$REPO_NAME" ]; then
+      echo "❌ Could not determine repo name"
+      exit 1
+    fi
+
     git remote set-url origin "git@github.com:${REPO_NAME}.git"
 
     echo "✅ chezmoi remote set to: $(git remote get-url origin)"
