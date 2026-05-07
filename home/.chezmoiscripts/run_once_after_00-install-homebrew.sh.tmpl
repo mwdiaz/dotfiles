@@ -38,8 +38,7 @@ function {
         # added to Homebrew releases in the future.
         homebrew_pkg_download_url="{{ gitHubLatestReleaseAssetURL $HOMEBREW_REPO $HOMEBREW_PKG }}"
 
-        curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" \
-          "${homebrew_pkg_download_url}"
+        curl --fail --location --show-error --silent --output "${HOMEBREW_PKG_PATH}" "${homebrew_pkg_download_url}"
 
         if (( $? != 0 )); then
           error "Failed to download Homebrew package installer from ${homebrew_pkg_download_url}. Exiting..."
@@ -59,8 +58,8 @@ function {
         if command pkgutil --pkg-info "sh.brew.homebrew" &> /dev/null; then
           # Source Homebrew environment to ensure brew commands work in this script
           eval "$($BREW_EXE shellenv)"
-
           echo "Homebrew installed successfully to $(builtin where brew)."
+
           rm -f -v "${HOMEBREW_PKG_PATH}"
         else
           error "Homebrew installation failed. Please confirm that the file at ${HOMEBREW_PKG_PATH} is a valid package. You may download the .pkg file manually at https://github.com/{{ $HOMEBREW_REPO }}/releases/latest."
@@ -84,13 +83,3 @@ function {
     esac
   fi
 }
-
-# Bootstrap CLI tools needed by subsequent scripts. In particular, Homebrew
-# uses the GitHub CLI (`gh`) to verify attestations, and the Personal Access
-# Token needs to be read from 1password.
-for formula in "1password-cli" "gh"; do
-  if ! brew list "$formula" &>/dev/null; then
-    echo "Installing $formula..."
-    brew install "$formula"
-  fi
-done

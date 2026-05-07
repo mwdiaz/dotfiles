@@ -1,5 +1,6 @@
 # -- Bootstrap (installed by chezmoi scripts, declared for idempotency) -------
 
+cask "1password"
 cask "1password-cli"
 brew "gh"
 
