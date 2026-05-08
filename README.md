@@ -18,9 +18,13 @@ This dotfiles repository manages the following configurations:
 
 ## Requirements
 
-- macOS (10.13+)
-- Xcode Command Line Tools
-- Git
+- Modern macOS version
+- git client
+
+```shell
+# Install the Xcode Command Line Tools in order to make default git client functional
+xcode-select --install
+```
 
 ## Installation
 
@@ -36,7 +40,6 @@ Run the following command to initialize and apply your dotfiles:
 1. Downloads and installs chezmoi to `$HOME/.local/bin`
 2. Clones this repository to `~/.local/share/chezmoi`
 3. Applies all configuration files to your home directory
-4. Prompts for any templated values (defined in `.chezmoi.toml.tmpl`)
 
 ## Usage
 
@@ -77,7 +80,7 @@ chezmoi apply
 ```
 .
 ├── home/                          # Files to be symlinked/copied to $HOME
-│   ├── .chezmoi.toml.tmpl        # chezmoi configuration template
+│   ├── .chezmoi.toml.tmpl         # chezmoi configuration template
 │   ├── .chezmoidata.toml          # Template data
 │   ├── .chezmoiexternal.json      # External file management
 │   ├── .chezmoiscripts/           # Scripts run during apply
