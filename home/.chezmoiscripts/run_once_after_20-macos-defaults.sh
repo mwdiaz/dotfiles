@@ -66,15 +66,37 @@ defaults write com.apple.dock show-recents -bool false
 # Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+# Disable "Show warning before changing an extension"
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Enable "Keep folders on top in windows when sorting by name"
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Avoid creating `.DS_Store` files on network or USB volumes
+# https://support.apple.com/en-us/102064
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 # endregion
 
-# ── Restart affected services ─────────────────────────────────────────────────
+## -----------------------------------------------------------------------------
+# MARK: CleanShot X
+## -----------------------------------------------------------------------------
+
+# General
+defaults write com.getcleanshot.app-setapp captureWithoutDesktopIcons -bool true
+defaults write com.getcleanshot.app-setapp playSounds -bool true
+
+# About
+defaults write com.getcleanshot.app-setapp analyticsAllowed -bool false
+
+# ── Restart affected services -------------------------------------------------
 
 for app in "Finder" "Dock" "SystemUIServer"; do
   killall "${app}" &>/dev/null || true
