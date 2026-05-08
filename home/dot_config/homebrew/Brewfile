@@ -11,6 +11,7 @@ brew "ffmpeg"
 brew "fnm"
 brew "git"
 brew "jq"
+brew "neovim"
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
 
 # -- Casks --------------------------------------------------------------------
