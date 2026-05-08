@@ -1,8 +1,20 @@
 {
   /* @see https://code.visualstudio.com/docs/configure/settings */
 
+  "editor.rulers": [
+    80,
+    {
+        "column": 120,
+        "color": "#f1313161"
+    }
+  ],
+
   "[git-commit]": {
     "editor.rulers": [50, 72],
     "editor.wordWrap": "off"
+  },
+
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#5a5a5a85"
   }
 }

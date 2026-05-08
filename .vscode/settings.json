@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "dot_editorconfig": "editorconfig",
+    "dot_gitconfig": "gitconfig",
+    "vimrc": "vimrc",
+  }
+}

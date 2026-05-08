@@ -1,6 +1,9 @@
 {
   "recommendations": [
     "editorconfig.editorconfig",
-    "romantomjak.go-template"
+    "mousavian.ssh-config-syntax-highlighter",
+    "romantomjak.go-template",
+    "voidei.vscode-vimrc",
+    "yy0931.gitconfig-lsp",
   ]
 }
