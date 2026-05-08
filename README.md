@@ -10,11 +10,11 @@ Dotfiles are configuration files for command-line tools and applications (shell,
 
 This dotfiles repository manages the following configurations:
 
-- **Shell**: Zsh environment setup (`.zshenv`)
-- **Version Control**: Git configuration (`.gitconfig`)
-- **Editor**: EditorConfig settings (`.editorconfig`) and VS Code extensions
-- **SSH**: SSH keys and configuration (private)
-- **macOS**: Library settings and preferences (private)
+- **Shell**: Zsh and Oh My Zsh setup and configuration
+- **Version Control**: Git configuration 
+- **Editor**: EditorConfig settings and default VS Code extensions (managed using Homebrew)
+- **SSH**: SSH keys (stored in 1Password) and configuration 
+- **macOS**: Application and system defaults
 
 ## Requirements
 
@@ -88,17 +88,11 @@ chezmoi apply
 │   ├── dot_editorconfig           # EditorConfig rules
 │   ├── dot_gitconfig              # Git configuration
 │   ├── dot_zshenv.tmpl            # Zsh environment (templated)
-│   ├── private_dot_ssh/           # SSH keys (private/not tracked)
-│   └── private_Library/           # macOS Library settings (private)
-├── .vscode/                       # VS Code settings and extensions
+│   ├── private_dot_ssh/           # SSH config
+│   └── private_Library/           # macOS application settings
+├── .vscode/                       # VS Code settings and extensions specific to this repo
 └── utils.sh                       # Utility scripts for setup
 ```
-
-## Notes
-
-- Files prefixed with `dot_` in the `home/` directory are installed without the `dot_` prefix (e.g., `dot_gitconfig` → `~/.gitconfig`)
-- Files prefixed with `private_` are not stored in the repository (e.g., SSH keys, sensitive configuration)
-- Files with `.tmpl` extension are processed as Go templates with values from `.chezmoidata.toml`
 
 ## License
 
