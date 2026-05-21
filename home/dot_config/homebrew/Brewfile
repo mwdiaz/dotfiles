@@ -6,6 +6,7 @@ brew "gh"
 
 # -- Formulae -----------------------------------------------------------------
 
+brew "atuin"
 brew "chezmoi"
 brew "ffmpeg"
 brew "fnm"
@@ -29,6 +30,8 @@ cask "setapp" # Collection of apps available with single subscription
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
+cask "vlc"
+cask "webex"
 cask "zoom"
 
 # -- VS Code Extensions -------------------------------------------------------

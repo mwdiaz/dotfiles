@@ -7,6 +7,12 @@
       "url": "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
   },
 
+  ".config/oh-my-zsh/plugins/atuin/atuin.plugin.zsh": {
+    "refreshPeriod": "672h",
+    "type": "file",
+    "url": "https://raw.githubusercontent.com/atuinsh/atuin/refs/heads/main/atuin.plugin.zsh"
+  },
+
   ".config/oh-my-zsh/plugins/zsh-autosuggestions": {
       "exact": true,
       "refreshPeriod": "168h",

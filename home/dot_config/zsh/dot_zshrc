@@ -5,6 +5,9 @@
 export ZSH="${XDG_DATA_HOME}/oh-my-zsh"
 
 plugins=(
+  atuin
+  brew
+  chezmoi
   git
   zsh-autosuggestions
 )

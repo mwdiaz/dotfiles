@@ -6,11 +6,11 @@ eval "$($BREW_EXE shellenv)"
 
 # Brewfile hash: {{ include "./dot_config/homebrew/Brewfile" | sha256sum }}
 if ! command brew bundle check --global &> /dev/null; then
-  echo "The Brewfile's dependencies are not satisfied. Running brew bundle install --global..."
+  echo "🍻 The Brewfile's dependencies are not satisfied. Running brew bundle install --global..."
 
   HOMEBREW_GITHUB_API_TOKEN="op://Private/GitHub Homebrew PAT/token" \
     op run -- \
     brew bundle install --global
 else
-  echo "The Brewfile's dependencies are satisfied. Skipping brew bundle install --global..."
+  echo "✅ The Brewfile's dependencies are satisfied. Skipping brew bundle install --global..."
 fi
