@@ -18,6 +18,7 @@ brew "yt-dlp" # Feature-rich command-line audio/video downloader
 # -- Casks --------------------------------------------------------------------
 
 cask "adobe-creative-cloud"
+cask "bambu-studio" # 3D printing software for Bambu Lab printers
 cask "arq" # Multi-cloud backup application
 cask "claude" # Anthropic's official Claude AI desktop app
 cask "discord"
