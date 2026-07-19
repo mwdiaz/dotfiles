@@ -1,20 +1,205 @@
 {
   /* @see https://code.visualstudio.com/docs/configure/settings */
+  "$schema": "vscode://schemas/settings/user",
 
+  "auto-comment-blocks.singleLineBlockOnEnter": true,
+
+  "aws.onDefaultRegionMissing": "add",
+  "aws.suppressPrompts": {
+    "apprunnerNotifyPricing": false,
+    "welcomePrompt": false,
+    "yamlExtPrompt": false
+  },
+
+  "chat.agent.maxRequests": 40,
+  "chat.viewSessions.orientation": "stacked",
+
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  "docker.extension.enableComposeLanguageServer": false,
+
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "Fira Code, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.sectionHeaderFontSize": 16,
+  "editor.multiCursorModifier": "ctrlCmd",
   "editor.rulers": [
     80,
     {
-        "column": 120,
-        "color": "#f1313161"
+      "column": 120,
+      "color": "#f1313161"
     }
   ],
+  "editor.snippetSuggestions": "top",
+  "editor.stopRenderingLineAfter": -1,
+  "editor.suggest.preview": true,
+  "editor.suggest.showMethods": true,
+  "editor.suggestSelection": "first",
+
+  "eslint.onIgnoredFiles": "warn",
+  "eslint.probe": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "mdx",
+    "typescript",
+    "typescriptreact",
+    "vue",
+  ],
+
+  "explorer.excludeGitIgnore": true,
+  "explorer.fileNesting.enabled": true,
+
+  "files.associations": {
+    "*.cjs": "javascript",
+    "*.js": "javascriptreact",
+    "*.mg": "php",
+    "*.mgi": "php",
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": true,
+    "scminput": false,
+    "yaml": true,
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.views.scm.grouped.views": {
+    "branches": true,
+    "commits": true,
+    "contributors": true,
+    "fileHistory": false,
+    "launchpad": false,
+    "remotes": true,
+    "repositories": true,
+    "searchAndCompare": false,
+    "stashes": false,
+    "tags": true,
+    "worktrees": true,
+  },
+
+  "intelephense.files.exclude": [
+    "**/.DS_Store/**",
+    "**/.git/**",
+    "**/.hg/**",
+    "**/.svn/**",
+    "**/bower_components/**",
+    "**/composer/autoload_*.php",
+    "**/CVS/**",
+    "**/node_modules/**",
+    "**/vendor/**/{Test,test,Tests,tests}/**",
+  ],
+
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+
+  "json.schemas": [],
+
+  "php-cs-fixer.configFile": ".php-cs-fixer.php",
+  "php-cs-fixer.executable": "./vendor/bin/php-cs-fixer",
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.lastDownload": 0,
+  "php-cs-fixer.onsave": true,
+
+  "redhat.telemetry.enabled": false,
+
+  "selectline.alignment": "right",
+
+  "storyExplorer.server.internal.storybookBinaryPath": "",
+
+  "stylelint.packageManager": "pnpm",
+
+  "svg.preview.mode": "svg",
+
+  "sync.autoDownload": false,
+  "sync.autoUpload": true,
+  "sync.forceDownload": false,
+  "sync.gist": "906e3ccea668d2374985c5d479c60906",
+  "sync.quietSync": true,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  "[dockercompose]": {
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.quickSuggestions": {
+      "comments": false,
+      "other": true,
+      "strings": true,
+    },
+    "editor.tabSize": 2
+  },
 
   "[git-commit]": {
     "editor.rulers": [50, 72],
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
+  },
+
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+
+  "[graphql]": {},
+
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
 
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#5a5a5a85"
-  }
+  },
+  "workbench.colorTheme": "Visual Studio Dark",
+
+  "yaml.customTags": [
+    "!And sequence",
+    "!And",
+    "!Base64",
+    "!Cidr",
+    "!Equals sequence",
+    "!Equals",
+    "!FindInMap sequence",
+    "!FindInMap",
+    "!GetAtt",
+    "!GetAZs",
+    "!If sequence",
+    "!If",
+    "!ImportValue sequence",
+    "!ImportValue",
+    "!Join sequence",
+    "!Join",
+    "!Not sequence",
+    "!Not",
+    "!Or sequence",
+    "!Or",
+    "!Ref",
+    "!Select sequence",
+    "!Select",
+    "!Split sequence",
+    "!Split",
+    "!Sub sequence",
+    "!Sub",
+  ]
 }
