@@ -5,7 +5,8 @@ set -euo pipefail
 
 echo "🍎 Applying macOS system defaults..."
 
-sudo --validate # Authenticate the user and extends the sudo timeout for another 5 minutes
+# Authenticate the user and extends the sudo timeout for another 5 minutes
+sudo --validate
 
 # Enable /usr/lib/pam/pam_tid.so.2 for Touch ID authentication in `sudo`
 # https://github.com/apple-oss-distributions/pam_modules/blob/main/modules/pam_tid/pam_tid.c
@@ -16,10 +17,10 @@ sudo tee /etc/pam.d/sudo_local << EOF > /dev/null
 auth       sufficient     pam_tid.so
 EOF
 
-## ----------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # MARK: System Settings
 # Updates System Settings ("/System/Applications/System Settings.app")
-## ----------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 
 # region: System Settings
 
@@ -84,6 +85,12 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # endregion
+
+## -----------------------------------------------------------------------------
+# MARK: iTerm2
+## -----------------------------------------------------------------------------
+
+defaults write com.googlecode.iterm2 PrefsCustomFolder {{ joinPath .chezmoi.homeDir .xdg.config "iterm2" | quote }}
 
 ## -----------------------------------------------------------------------------
 # MARK: CleanShot X
