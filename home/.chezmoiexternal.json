@@ -19,5 +19,17 @@
       "stripComponents": 1,
       "type": "archive",
       "url": "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
+  },
+
+  ".config/oh-my-zsh/themes/spaceship-prompt": {
+    "clone": {
+      "args": ["--depth", "1"]
+    },
+    "pull": {
+      "args": ["--ff-only"]
+    },
+    "refreshPeriod": "672h",
+    "type": "git-repo",
+    "url": "git@github.com:spaceship-prompt/spaceship-prompt.git"
   }
 }

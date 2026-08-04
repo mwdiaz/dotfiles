@@ -12,8 +12,10 @@ plugins=(
   zsh-autosuggestions
 )
 
-ZSH_CUSTOM="${XDG_CONFIG_HOME}/oh-my-zsh"
 ZSH_CACHE_DIR="${XDG_CACHE_HOME}/oh-my-zsh"
+ZSH_THEME="spaceship"
+
+export ZSH_CUSTOM="${XDG_CONFIG_HOME}/oh-my-zsh"
 
 source "${ZSH}/oh-my-zsh.sh"
 
