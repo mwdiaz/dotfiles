@@ -2,12 +2,16 @@
 
 # -- Oh My Zsh ----------------------------------------------------------------
 
+zstyle ':omz:plugins:fnm' autostart yes
+zstyle ':omz:plugins:fnm' use-on-cd yes
+
 export ZSH="${XDG_DATA_HOME}/oh-my-zsh"
 
 plugins=(
   atuin
   brew
   chezmoi
+  fnm
   git
   zsh-autosuggestions
 )
@@ -23,8 +27,3 @@ source "${ZSH}/oh-my-zsh.sh"
 
 # Wrap `gh` to inject read-only Personal Access Token
 source "$XDG_CONFIG_HOME/op/plugins.sh"
-
-# Hook fnm into the shell and enable project Node.js version auto-switching
-if command -v fnm &> /dev/null; then
-  eval "$(fnm env --use-on-cd)"
-fi
